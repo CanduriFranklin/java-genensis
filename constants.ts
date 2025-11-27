@@ -3,6 +3,7 @@ import { BookPage, PageType } from './types';
 export const AUTHOR_NAME = "Developer Canduri Franklin";
 export const BOOK_TITLE = "JAVA GENESIS AI";
 export const BOOK_SUBTITLE = "THE ERA OF AUGMENTED DEVELOPMENT";
+export const PDF_DOWNLOAD_LINK = "https://bit.ly/43T3awo";
 
 export const BOOK_PAGES: BookPage[] = [
   {

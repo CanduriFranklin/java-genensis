@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen, Cpu, Sparkles, Send, MessageSquare, ExternalLink, Bookmark } from 'lucide-react';
-import { BOOK_PAGES, AUTHOR_NAME } from './constants';
+import { ChevronLeft, ChevronRight, BookOpen, Cpu, Sparkles, Send, MessageSquare, ExternalLink, Bookmark, Download } from 'lucide-react';
+import { BOOK_PAGES, AUTHOR_NAME, PDF_DOWNLOAD_LINK } from './constants';
 import { PageType, ChatMessage } from './types';
 import { CodeBlock } from './components/CodeBlock';
 import { chatWithBook } from './services/geminiService';
@@ -260,6 +260,42 @@ const App: React.FC = () => {
         <main className="flex-grow pt-20 pb-24 px-4 sm:px-8 overflow-y-auto scrollbar-hide">
            {renderContent()}
         </main>
+
+        {/* PDF Download Floating Widget */}
+        <a 
+          href={PDF_DOWNLOAD_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-24 left-6 z-40 group"
+        >
+           <div className="relative flex items-center">
+             {/* Glow Effect */}
+             <div className="absolute inset-0 bg-neon-cyan/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+             
+             {/* Card Container */}
+             <div className="relative bg-[#13131f]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 pr-5 flex items-center gap-4 shadow-2xl transform transition-all duration-300 group-hover:-translate-y-1 group-hover:border-neon-cyan/50">
+                
+                {/* Book Thumbnail */}
+                <div className="w-12 h-16 rounded-lg overflow-hidden relative shadow-lg border border-white/10 group-hover:shadow-neon-cyan/20 transition-all">
+                  <img 
+                    src={BOOK_PAGES[0].imageUrl} 
+                    alt="E-Book Cover" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+
+                {/* Text Action */}
+                <div className="flex flex-col">
+                   <span className="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-0.5">Free E-Book</span>
+                   <div className="flex items-center space-x-2 text-white font-bold text-sm group-hover:text-neon-cyan transition-colors">
+                      <span>Download PDF</span>
+                      <Download size={14} className="group-hover:animate-bounce" />
+                   </div>
+                </div>
+             </div>
+           </div>
+        </a>
 
         {/* Navigation Footer */}
         <footer className="fixed bottom-0 w-full glass-panel py-4 px-8 flex justify-between items-center z-40">
