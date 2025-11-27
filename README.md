@@ -4,6 +4,10 @@
   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Java Genesis AI Banner" width="200" />
 </p>
 
+> **Welcome to the AI Journey: JAVA GENESIS AI - A JOURNEY INTO THE FUTURE 🌌**
+>
+> This project represents a bold step into the future of software development, where the robustness of the **Java** ecosystem merges with the limitless potential of **Generative AI**. Here, we explore not just how to code, but how to create, innovate, and redefine what's possible. Join us on this journey as we unlock new frontiers in technology and empower the next generation of developers.
+
 # The AI Journey: JAVA GENESIS AI - A JOURNEY INTO THE FUTURE 🌌
 
 <p align="center">
