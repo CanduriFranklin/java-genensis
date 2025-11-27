@@ -1,7 +1,7 @@
 
 <!-- Banner -->
 <p align="center">
-  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Java Genesis AI Banner" width="500" />
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Java Genesis AI Banner" width="300" />
 </p>
 
 # A Jornada da IA: JAVA GENESIS AI - UMA VIAGEM PELO FUTURO 🌌
