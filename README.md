@@ -5,11 +5,6 @@
 </p>
 
 # The AI Journey: JAVA GENESIS AI - A JOURNEY INTO THE FUTURE 🌌
-
-<p align="right">
-  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="80" style="border-radius:50%" />
-</p>
-
 ---
 
 ## 🚀 Motivation and Objectives: Java + GenAI
