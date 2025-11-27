@@ -3,11 +3,13 @@
    <img src="images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI E-Book" width="800" />
 </div>
 
+
 # Java Genesis AI
 
 <div align="right">
    <img src="images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="100" style="border-radius:50%" />
 </div>
+
 
 ## Overview
 
@@ -15,12 +17,34 @@ Welcome to **Java Genesis AI**! This project leverages generative AI to empower 
 
 ---
 
+## Live Application
+
+Access the deployed app here: [Java Genesis AI App](https://java-genesis-ai-835389679236.us-west1.run.app)
+
+---
+
+---
+
 ## Table of Contents
 1. [Project Highlights](#project-highlights)
-2. [E-Book Presentation](#e-book-presentation)
-3. [Java & AI Visuals](#java--ai-visuals)
-4. [Getting Started](#getting-started)
-5. [Contact & Social](#contact--social)
+2. [Technologies Used](#technologies-used)
+3. [E-Book Presentation](#e-book-presentation)
+4. [Java & AI Visuals](#java--ai-visuals)
+5. [Repository Usage](#repository-usage)
+6. [Getting Started](#getting-started)
+7. [Contact & Social](#contact--social)
+
+## Technologies Used
+
+- **Programming Language**: TypeScript, JavaScript
+- **Visual Studio Code**: IDE for development
+- **GitHub Copilot**: AI agent and development assistant
+- **Google Cloud**: Infrastructure and cloud services
+- **Google Cloud Run**: Application deployment
+- **Google AI Studio**: Development environment
+- **Gemini**: Base model for project creation, visual content, and e-book development
+
+---
 
 ---
 
@@ -46,6 +70,19 @@ Welcome to **Java Genesis AI**! This project leverages generative AI to empower 
 
 👉 [Download Java Genesis AI E-Book](https://bit.ly/43T3awo)
 
+---
+
+## Repository Usage
+
+To use this repository:
+
+1. Clone the repository to your local machine.
+2. Install dependencies and set up your environment as described in [Getting Started](#getting-started).
+3. Access the deployed application: [Java Genesis AI App](https://java-genesis-ai-835389679236.us-west1.run.app)
+4. Download and read the digital e-book: [Java Genesis AI E-Book](https://bit.ly/43T3awo)
+5. Explore the source code, resources, and contribute!
+
+---
 ---
 
 ## Java & AI Visuals
