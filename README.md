@@ -1,19 +1,24 @@
 
-<div align="center">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI E-Book" width="800" />
-</div>
-
+<p align="center">
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI Banner" width="900" />
+</p>
 
 # Java Genesis AI
 
-<div align="right">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="100" style="border-radius:50%" />
-</div>
+<p align="right">
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="80" style="border-radius:50%" />
+</p>
 
+---
 
-## Overview
+## 🚀 Project Presentation
 
-Welcome to **Java Genesis AI**! This project leverages generative AI to empower Java development and learning. Explore the digital e-book, interactive tools, and resources to boost your skills and creativity.
+Java Genesis AI is a cutting-edge project that combines the power of generative AI with Java development. It features:
+
+- A digital e-book for learning and inspiration
+- Interactive tools and resources
+- AI-powered visuals and content
+- Cloud-native deployment for instant access
 
 ---
 
