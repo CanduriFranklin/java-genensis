@@ -5,6 +5,19 @@
 </p>
 
 # The AI Journey: JAVA GENESIS AI - A JOURNEY INTO THE FUTURE 🌌
+
+<p align="center">
+  <a href="https://github.com/CanduriFranklin/java-genensis/raw/main/video/Improving_Video_Text_Visibility%20(2).mp4">
+    <img src="https://img.shields.io/badge/Watch%20Video-Play-red?style=for-the-badge&logo=youtube" alt="Watch Video" />
+  </a>
+</p>
+
+> **A Glimpse into the Future:** This video explores the transformative impact of Generative AI on the Java ecosystem, showcasing how intelligent tools will redefine the future of software development. Witness the dawn of a new era where AI and Java converge to create smarter, more efficient, and more powerful applications.
+
+<p align="right">
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="80" style="border-radius:50%" />
+</p>
+
 ---
 
 ## 🚀 Motivation and Objectives: Java + GenAI
