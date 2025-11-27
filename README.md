@@ -1,136 +1,116 @@
 
+<!-- Banner -->
 <p align="center">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI Banner" width="900" />
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Java Genesis AI Banner" width="900" />
 </p>
 
-# Java Genesis AI
+# A Jornada da IA: JAVA GENESIS AI - UMA VIAGEM PELO FUTURO 🌌
 
 <p align="right">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="80" style="border-radius:50%" />
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="80" style="border-radius:50%" />
 </p>
 
 ---
 
-## 🚀 Project Presentation
+## 🚀 Motivação e Objetivos: Java + GenAI
 
-Java Genesis AI is a cutting-edge project that combines the power of generative AI with Java development. It features:
+Este projeto nasceu da crescente necessidade de unir a robustez e segurança do ecossistema **Java** com a inovação disruptiva da **IA Generativa**. Acreditamos que essa sinergia pode transformar a maneira como desenvolvemos software, criamos conteúdo e resolvemos problemas complexos.
 
-- A digital e-book for learning and inspiration
-- Interactive tools and resources
-- AI-powered visuals and content
-- Cloud-native deployment for instant access
-
----
-
-## Live Application
-
-Access the deployed app here: [Java Genesis AI App](https://java-genesis-ai-835389679236.us-west1.run.app)
+**Nossos principais objetivos são:**
+- **Capacitar Desenvolvedores:** Fornecer ferramentas e recursos que integrem IA Generativa ao fluxo de trabalho de desenvolvimento Java.
+- **Explorar Novas Fronteiras:** Investigar o potencial da IA para automação de código, otimização de performance e criação de experiências de usuário mais ricas.
+- **Disseminar Conhecimento:** Através do nosso e-book e da aplicação interativa, queremos tornar o conhecimento sobre IA Generativa acessível a todos, desde estudantes a arquitetos de software experientes.
 
 ---
 
----
+## 🌐 Aplicação e E-book
 
-## Table of Contents
-1. [Project Highlights](#project-highlights)
-2. [Technologies Used](#technologies-used)
-3. [E-Book Presentation](#e-book-presentation)
-4. [Java & AI Visuals](#java--ai-visuals)
-5. [Repository Usage](#repository-usage)
-6. [Getting Started](#getting-started)
-7. [Contact & Social](#contact--social)
-
-## Technologies Used
-
-- **Programming Language**: TypeScript, JavaScript
-- **Visual Studio Code**: IDE for development
-- **GitHub Copilot**: AI agent and development assistant
-- **Google Cloud**: Infrastructure and cloud services
-- **Google Cloud Run**: Application deployment
-- **Google AI Studio**: Development environment
-- **Gemini**: Base model for project creation, visual content, and e-book development
+- **Aplicação Interativa:** [Acesse o Java Genesis AI App](https://java-genesis-ai-835389679236.us-west1.run.app)
+- **E-book Digital:** [Faça o download do "A Jornada da IA"](https://bit.ly/43T3awo)
 
 ---
 
----
+## 📖 Sobre o E-book: "A Jornada da IA"
 
-## Project Highlights
+<p align="center">
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="E-Book Cover" width="350" />
+</p>
 
-<div align="center">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-java.png" alt="Java Logo" width="120" />
-</div>
-
-- Cutting-edge AI integration for Java
-- Interactive learning resources
-- Community-driven contributions
-
----
-
-## E-Book Presentation
-
-<div align="center">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="E-Book Cover" width="350" />
-</div>
-
-**Access the free digital e-book:**
-
-👉 [Download Java Genesis AI E-Book](https://bit.ly/43T3awo)
+Este e-book de 5 páginas é um mergulho no universo da IA Generativa. Ele aborda:
+- O impacto revolucionário da IA em nosso cotidiano.
+- Como a IA Generativa está moldando o futuro do desenvolvimento de software.
+- A intersecção entre a IA e o ecossistema Java, uma das linguagens mais estáveis e seguras do mundo.
 
 ---
 
-## Repository Usage
+## 🛠️ Tecnologias e Ferramentas
 
-To use this repository:
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/Gemini-8E44AD?style=for-the-badge&logo=gemini&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code" />
+  <img src="https://img.shields.io/badge/GitHub_Copilot-171515?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Copilot" />
+</p>
 
-1. Clone the repository to your local machine.
-2. Install dependencies and set up your environment as described in [Getting Started](#getting-started).
-3. Access the deployed application: [Java Genesis AI App](https://java-genesis-ai-835389679236.us-west1.run.app)
-4. Download and read the digital e-book: [Java Genesis AI E-Book](https://bit.ly/43T3awo)
-5. Explore the source code, resources, and contribute!
-
----
----
-
-## Java & AI Visuals
-
-<div align="center">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Robot Protecting Java" width="220" />
-</div>
-
-The robot symbolizes AI safeguarding Java technology, representing innovation and security in modern development.
+- **Linguagem de Programação:** Java
+- **Plataforma de Nuvem:** Google Cloud e Google Cloud Run
+- **Modelo de IA:** Gemini
+- **Ambiente de Desenvolvimento:** Google AI Studio e VS Code
+- **Assistente de IA:** GitHub Copilot
+- **Criação de Conteúdo:** Canva, Leonardo AI
 
 ---
 
-## Getting Started
+## 📚 Recursos Oficiais e Links Úteis
 
-**Prerequisites:** Node.js
-
-1. Install dependencies:
-    ```bash
-    npm install
-    ```
-2. Set the `GEMINI_API_KEY` in `.env.local` to your Gemini API key
-3. Run the app:
-    ```bash
-    npm run dev
-    ```
-
----
-
-## Contact & Social
-
-<div align="left">
-   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="60" style="border-radius:50%" />
-</div>
-
-**Author:** Canduri Franklin
-
-- 📧 Email: candurifranklin@email.com
-- 🌐 [LinkedIn](https://www.linkedin.com/in/candurifranklin)
-- 🐦 [Twitter](https://twitter.com/candurifranklin)
-- 📘 [E-Book Download](https://bit.ly/43T3awo)
+- **Java:**
+  - [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
+- **IA da Google:**
+  - [Google AI](https://ai.google/)
+  - [Google Cloud AI](https://cloud.google.com/ai)
+- **IA da Microsoft:**
+  - [Microsoft AI](https://www.microsoft.com/en-us/ai)
+- **Outras Ferramentas:**
+  - [Canva](https://www.canva.com/)
+  - [Leonardo AI](https://leonardo.ai/)
 
 ---
 
-<div align="center">
-   <sub>Java Genesis AI &copy; 2025 | Empowering Java with Generative AI</sub>
-</div>
+## 📦 Como Utilizar este Repositório
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/CanduriFranklin/java-genensis.git
+   ```
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+3. **Configure sua chave de API do Gemini** no arquivo `.env.local`:
+   ```env
+   GEMINI_API_KEY=SUA_CHAVE_AQUI
+   ```
+4. **Execute a aplicação:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 💬 Contato e Redes Sociais
+
+<p align="left">
+  <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="60" style="border-radius:50%" />
+</p>
+
+- **Autor:** Canduri Franklin
+- **E-mail:** candurifranklin@email.com
+- **LinkedIn:** [linkedin.com/in/candurifranklin](https://www.linkedin.com/in/candurifranklin)
+- **Twitter:** [@candurifranklin](https://twitter.com/candurifranklin)
+
+---
+
+<p align="center">
+  <sub>Java Genesis AI &copy; 2025 | Empoderando o Java com IA Generativa</sub>
+</p>
