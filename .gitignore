@@ -32,3 +32,6 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+# Documentation
+README2.md
+E-BOOK1.md
