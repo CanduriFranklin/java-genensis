@@ -1,13 +1,13 @@
 
 <div align="center">
-   <img src="images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI E-Book" width="800" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="Java Genesis AI E-Book" width="800" />
 </div>
 
 
 # Java Genesis AI
 
 <div align="right">
-   <img src="images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="100" style="border-radius:50%" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="100" style="border-radius:50%" />
 </div>
 
 
@@ -51,7 +51,7 @@ Access the deployed app here: [Java Genesis AI App](https://java-genesis-ai-8353
 ## Project Highlights
 
 <div align="center">
-   <img src="images/imagen-java.png" alt="Java Logo" width="120" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-java.png" alt="Java Logo" width="120" />
 </div>
 
 - Cutting-edge AI integration for Java
@@ -63,7 +63,7 @@ Access the deployed app here: [Java Genesis AI App](https://java-genesis-ai-8353
 ## E-Book Presentation
 
 <div align="center">
-   <img src="images/E-Book%20Java%20Genesis%20AI.jpg" alt="E-Book Cover" width="350" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/E-Book%20Java%20Genesis%20AI.jpg" alt="E-Book Cover" width="350" />
 </div>
 
 **Access the free digital e-book:**
@@ -88,7 +88,7 @@ To use this repository:
 ## Java & AI Visuals
 
 <div align="center">
-   <img src="images/imagen-robo.png" alt="Robot Protecting Java" width="220" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/imagen-robo.png" alt="Robot Protecting Java" width="220" />
 </div>
 
 The robot symbolizes AI safeguarding Java technology, representing innovation and security in modern development.
@@ -114,7 +114,7 @@ The robot symbolizes AI safeguarding Java technology, representing innovation an
 ## Contact & Social
 
 <div align="left">
-   <img src="images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="60" style="border-radius:50%" />
+   <img src="https://github.com/CanduriFranklin/java-genensis/raw/main/Images/fotografig-canduri-franklin.png" alt="Canduri Franklin" width="60" style="border-radius:50%" />
 </div>
 
 **Author:** Canduri Franklin
