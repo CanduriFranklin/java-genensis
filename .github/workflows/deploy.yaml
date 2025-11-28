@@ -46,4 +46,4 @@ jobs:
           image: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/java-genesis-ai/app:${{ github.sha }}
           flags: '--allow-unauthenticated'
           env_vars: |
-            API_KEY=${{ secrets.API_KEY }}
+            VITE_API_KEY=${{ secrets.VITE_API_KEY }}
