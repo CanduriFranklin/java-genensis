@@ -14,7 +14,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 # Copy built assets from the builder stage
 COPY --from=builder /app/dist .
-# Expose port 80
-EXPOSE 80
+# Expose port 8080
+EXPOSE 8080
 # Start Nginx and serve the app
 CMD ["nginx", "-g", "daemon off;"]
