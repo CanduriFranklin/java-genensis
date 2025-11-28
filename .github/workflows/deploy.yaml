@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: 'Debug: Print Project ID'
+        run: echo "The project ID from secrets is ${{ secrets.GCP_PROJECT }}"
+
       - name: Authenticate to Google Cloud
         id: auth
         uses: google-github-actions/auth@v2
