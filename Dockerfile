@@ -21,7 +21,7 @@ RUN apk add --no-cache gettext
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy the custom nginx configuration template and the startup script
-COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
+COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY start-nginx.sh /start-nginx.sh
 RUN chmod +x /start-nginx.sh
 
