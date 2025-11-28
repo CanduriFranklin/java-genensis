@@ -14,13 +14,6 @@ jobs:
       id-token: 'write'
     
     steps:
-      - name: 'Validate Secrets'
-        if: ${{ !secrets.GCP_PROJECT }}
-        run: |
-          echo "Error: The GCP_PROJECT secret is not set."
-          echo "Please add it to your repository secrets before running this workflow."
-          exit 1
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -33,13 +26,6 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
-
-      - name: 'Debug: Print Docker Image Name'
-        env:
-          GAR_LOCATION: us-west1
-          SERVICE: java-genesis-ai
-        run: |
-          echo "Attempting to build and push image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{ github.sha }}"
         
       - name: Build and Push Docker image
         env:
