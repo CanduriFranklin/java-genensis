@@ -1,14 +1,19 @@
-# Dockerfile for Vite + React + TypeScript app
-FROM node:20-alpine AS builder
+# STAGE 1: Construction
+FROM node:18-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json* yarn.lock* ./
-RUN npm install --frozen-lockfile || yarn install --frozen-lockfile
+COPY package*.json ./
+RUN npm install
 COPY . .
-RUN npm run build || yarn build
+# This will execute "vite build" according to your package.json
+RUN npm run build
 
-FROM nginx:alpine AS production
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/dist .
-COPY ./nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# STAGE 2: Server
+FROM node:18-alpine
+WORKDIR /app
+# We installed the lightweight web server
+RUN npm install -g serve
+# We copied the 'dist' folder that Vite generated.
+COPY --from=builder /app/dist ./dist
+EXPOSE 8080
+# We start the server
+CMD ["serve", "-s", "dist", "-l", "8080"]
