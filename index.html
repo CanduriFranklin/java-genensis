@@ -35,12 +35,16 @@
       }
       .scrollbar-hide {
           -ms-overflow-style: none;
-          scrollbar-width: none;
+      }
+      @supports (scrollbar-width: none) {
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
       }
       .glass-panel {
         background: rgba(19, 19, 31, 0.7);
-        backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
