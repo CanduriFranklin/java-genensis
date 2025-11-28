@@ -5,8 +5,22 @@ import { PageType, ChatMessage } from './types';
 import { CodeBlock } from './components/CodeBlock';
 import { chatWithBook } from './services/geminiService';
 
+// --- Sub-components extracted for cleanliness ---
+
+const ThinkingIndicator = () => (
+  <div className="flex justify-start">
+    <div className="bg-white/5 p-3 rounded-2xl rounded-tl-none border border-white/5 flex items-center space-x-2">
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+    </div>
+  </div>
+);
+
 const App: React.FC = () => {
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
+  // FIX: Agregado estado para la dirección de animación
+  const [direction, setDirection] = useState<'left' | 'right'>('right'); 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     { role: 'model', text: "Greetings, Architect. I am the Java Genesis AI Companion. Ask me anything about the manuscript." }
@@ -19,14 +33,16 @@ const App: React.FC = () => {
   const currentPage = BOOK_PAGES[currentPageIndex];
   const totalPages = BOOK_PAGES.length;
 
+  // Scroll chat to bottom
   useEffect(() => {
-    if (chatEndRef.current) {
+    if (chatEndRef.current && isChatOpen) {
       chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [chatMessages, isChatOpen]);
 
   const goToPage = (index: number) => {
     if (index >= 0 && index < totalPages) {
+      // FIX: Ahora setDirection funcionará correctamente
       setDirection(index > currentPageIndex ? 'right' : 'left');
       setCurrentPageIndex(index);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -42,12 +58,17 @@ const App: React.FC = () => {
     setChatMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsThinking(true);
 
-    const response = await chatWithBook(userMsg);
-    
-    setChatMessages(prev => [...prev, { role: 'model', text: response }]);
-    setIsThinking(false);
+    try {
+      const response = await chatWithBook(userMsg);
+      setChatMessages(prev => [...prev, { role: 'model', text: response }]);
+    } catch (error) {
+      setChatMessages(prev => [...prev, { role: 'model', text: "Connection error. Please try again." }]);
+    } finally {
+      setIsThinking(false);
+    }
   };
 
+  // Content Rendering Logic
   const renderContent = () => {
     const isCover = currentPage.type === PageType.COVER;
     const isClosing = currentPage.type === PageType.CLOSING;
@@ -113,6 +134,7 @@ const App: React.FC = () => {
 
         {/* Content Pages */}
         {!isCover && (
+          // Added animation key based on currentPage.id to trigger re-animation on page change
           <div key={currentPage.id} className="animate-fade-in w-full py-8 md:py-12 px-4 md:px-0">
             <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 border-b border-white/10 pb-4">
               <span className="text-neon-purple font-mono text-xl">0{currentPage.id}</span>
@@ -143,7 +165,7 @@ const App: React.FC = () => {
                 {currentPage.bulletPoints.map((point, idx) => {
                   const parts = point.split('**');
                   const bold = parts[1];
-                  const rest = parts[2] || parts[0];
+                  const rest = parts[2] || parts[0]; // Fallback logic handles cases without bolding better
                   
                   return (
                     <div key={idx} className="glass-panel p-5 rounded-xl border-l-2 border-l-neon-purple hover:border-l-neon-cyan hover:bg-white/5 transition-all group">
@@ -169,7 +191,7 @@ const App: React.FC = () => {
               </div>
             )}
             
-            {/* Official Resources / Knowledge Base */}
+            {/* Knowledge Base */}
             {currentPage.links && (
               <div className="my-10 border-t border-white/10 pt-6">
                 <h3 className="flex items-center text-neon-cyan font-mono text-sm tracking-widest mb-4">
@@ -186,14 +208,14 @@ const App: React.FC = () => {
                       className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 hover:border-neon-cyan/50 transition-all group"
                     >
                       <div className="flex items-center space-x-3">
-                         <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
                            link.type === 'DOCS' ? 'bg-blue-900/50 text-blue-200' : 
                            link.type === 'TOOL' ? 'bg-purple-900/50 text-purple-200' : 
                            'bg-gray-700 text-gray-200'
-                         }`}>
-                           {link.type}
-                         </span>
-                         <span className="text-sm text-gray-300 font-medium group-hover:text-white">{link.title}</span>
+                          }`}>
+                            {link.type}
+                          </span>
+                          <span className="text-sm text-gray-300 font-medium group-hover:text-white">{link.title}</span>
                       </div>
                       <ExternalLink size={14} className="text-gray-500 group-hover:text-neon-cyan transition-colors" />
                     </a>
@@ -210,9 +232,9 @@ const App: React.FC = () => {
                 </p>
                 {isClosing && (
                   <div className="mt-8 text-center text-gray-400">
-                     <p className="text-sm uppercase tracking-widest mb-2">Written & Developed By</p>
-                     <p className="text-neon-cyan font-mono text-lg">{AUTHOR_NAME}</p>
-                     <p className="text-xs mt-2 text-gray-500">Expert in Software Development & Emerging Technologies</p>
+                      <p className="text-sm uppercase tracking-widest mb-2">Written & Developed By</p>
+                      <p className="text-neon-cyan font-mono text-lg">{AUTHOR_NAME}</p>
+                      <p className="text-xs mt-2 text-gray-500">Expert in Software Development & Emerging Technologies</p>
                   </div>
                 )}
               </div>
@@ -243,11 +265,12 @@ const App: React.FC = () => {
             <span className="font-bold text-white tracking-wider text-sm hidden sm:inline">JAVA GENESIS AI</span>
           </div>
           <div className="flex items-center space-x-4">
-             <div className="text-xs font-mono text-gray-500">
-               PAGE {currentPageIndex + 1} / {totalPages}
-             </div>
-             <button 
+              <div className="text-xs font-mono text-gray-500">
+                PAGE {currentPageIndex + 1} / {totalPages}
+              </div>
+              <button 
                 onClick={() => setIsChatOpen(!isChatOpen)}
+                aria-label="Toggle AI Chat"
                 className={`p-2 rounded-full transition-all ${isChatOpen ? 'bg-neon-cyan text-black' : 'bg-white/10 text-white hover:bg-white/20'}`}
              >
                 <MessageSquare size={18} />
@@ -265,33 +288,29 @@ const App: React.FC = () => {
           href={PDF_DOWNLOAD_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-24 left-6 z-40 group"
+          className="fixed bottom-24 left-6 z-40 group hidden md:block" // Hidden on mobile to avoid overlap
         >
            <div className="relative flex items-center">
-             {/* Glow Effect */}
              <div className="absolute inset-0 bg-neon-cyan/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
              
-             {/* Card Container */}
              <div className="relative bg-[#13131f]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 pr-5 flex items-center gap-4 shadow-2xl transform transition-all duration-300 group-hover:-translate-y-1 group-hover:border-neon-cyan/50">
-                
-                {/* Book Thumbnail */}
-                <div className="w-12 h-16 rounded-lg overflow-hidden relative shadow-lg border border-white/10 group-hover:shadow-neon-cyan/20 transition-all">
-                  <img 
-                    src={BOOK_PAGES[0].imageUrl} 
-                    alt="E-Book Cover" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                </div>
+               
+               <div className="w-12 h-16 rounded-lg overflow-hidden relative shadow-lg border border-white/10 group-hover:shadow-neon-cyan/20 transition-all">
+                 <img 
+                   src={BOOK_PAGES[0]?.imageUrl || ""} 
+                   alt="E-Book Cover" 
+                   className="w-full h-full object-cover"
+                 />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+               </div>
 
-                {/* Text Action */}
-                <div className="flex flex-col">
-                   <span className="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-0.5">Free E-Book</span>
-                   <div className="flex items-center space-x-2 text-white font-bold text-sm group-hover:text-neon-cyan transition-colors">
-                      <span>Download PDF</span>
-                      <Download size={14} className="group-hover:animate-bounce" />
-                   </div>
-                </div>
+               <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-0.5">Free E-Book</span>
+                  <div className="flex items-center space-x-2 text-white font-bold text-sm group-hover:text-neon-cyan transition-colors">
+                    <span>Download PDF</span>
+                    <Download size={14} className="group-hover:animate-bounce" />
+                  </div>
+               </div>
              </div>
            </div>
         </a>
@@ -301,6 +320,7 @@ const App: React.FC = () => {
           <button 
             onClick={() => goToPage(currentPageIndex - 1)}
             disabled={currentPageIndex === 0}
+            aria-label="Previous Page"
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all ${
               currentPageIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/10 hover:text-neon-cyan'
             }`}
@@ -324,6 +344,7 @@ const App: React.FC = () => {
           <button 
             onClick={() => goToPage(currentPageIndex + 1)}
             disabled={currentPageIndex === totalPages - 1}
+            aria-label="Next Page"
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all ${
               currentPageIndex === totalPages - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/10 hover:text-neon-cyan'
             }`}
@@ -358,15 +379,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             ))}
-            {isThinking && (
-               <div className="flex justify-start">
-                 <div className="bg-white/5 p-3 rounded-2xl rounded-tl-none border border-white/5 flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-                    <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-                    <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
-                 </div>
-               </div>
-            )}
+            {isThinking && <ThinkingIndicator />}
             <div ref={chatEndRef} />
           </div>
 
@@ -382,6 +395,7 @@ const App: React.FC = () => {
               <button 
                 type="submit"
                 disabled={!chatInput.trim() || isThinking}
+                aria-label="Send Message"
                 className="absolute right-2 top-2 p-1 text-neon-cyan hover:text-white disabled:opacity-50 transition-colors"
               >
                 <Send size={18} />
