@@ -17,8 +17,8 @@ FROM nginx:1.21.0-alpine
 # Copy the built assets from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy the custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy the custom nginx configuration, overwriting the default
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 8080
 EXPOSE 8080
