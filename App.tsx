@@ -10,9 +10,9 @@ import { chatWithBook } from './services/geminiService';
 const ThinkingIndicator = () => (
   <div className="flex justify-start">
     <div className="bg-white/5 p-3 rounded-2xl rounded-tl-none border border-white/5 flex items-center space-x-2">
-      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce"></div>
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce [animation-delay:150ms]"></div>
+      <div className="w-2 h-2 bg-neon-cyan rounded-full animate-bounce [animation-delay:300ms]"></div>
     </div>
   </div>
 );

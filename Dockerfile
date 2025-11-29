@@ -17,11 +17,11 @@ RUN npm run build
 # Stage 2: Serve the static files with Nginx
 FROM nginx:1.21.0-alpine
 
+# Copy the compiled files from the build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
 # Remove the default Nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy the compiled files
-COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy your custom Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
