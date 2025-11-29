@@ -7,20 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies
 node_modules
-
-# Build output
 dist
 dist-ssr
-build/
-
-# Local environment variables
-.env.local
-.env.*.local
-
-# Test coverage
-coverage/
+*.local
 
 # Editor directories and files
 .vscode/*
@@ -32,6 +22,3 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
-# Documentation
-README2.md
-E-BOOK1.md

@@ -4,13 +4,12 @@ import { BOOK_PAGES } from "../constants";
 let ai: GoogleGenAI | null = null;
 
 export const initializeGenAI = () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  if (!apiKey) {
-    console.warn("VITE_API_KEY not found in environment.");
+  if (!process.env.API_KEY) {
+    console.warn("API_KEY not found in environment.");
     return;
   }
   try {
-    ai = new GoogleGenAI({ apiKey });
+    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   } catch (error) {
     console.error("Failed to initialize GoogleGenAI", error);
   }
