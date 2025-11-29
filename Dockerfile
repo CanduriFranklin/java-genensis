@@ -17,15 +17,19 @@ RUN npm run build
 # Stage 2: Serve the static files with Nginx
 FROM nginx:1.21.0-alpine
 
+# Install 'gettext' for envsubst
+RUN apk add --no-cache gettext
+
 # Copy the built assets from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Update the default Nginx configuration to listen on port 8080.
-# This is the only change needed for Cloud Run.
-RUN sed -i 's/listen   80;/listen   8080;/' /etc/nginx/conf.d/default.conf
+# Copy the Nginx configuration template and the entrypoint script
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Expose the port Cloud Run expects
+# Expose the port (the actual port will be set by the entrypoint script)
 EXPOSE 8080
 
-# Start Nginx in foreground mode
-CMD ["nginx", "-g", "daemon off;"]
+# Run the entrypoint script to start Nginx
+ENTRYPOINT ["/entrypoint.sh"]
