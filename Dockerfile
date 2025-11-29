@@ -17,14 +17,10 @@ RUN npm run build
 # Stage 2: Serve the static files with Nginx
 FROM nginx:1.21.0-alpine
 
-# Copy the compiled files from the build stage
+# Copy only the built assets from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Remove the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy your custom Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# The default nginx.conf is sufficient for a basic SPA, so no custom config is needed
 
 # Expose the port Cloud Run expects
 EXPOSE 8080
