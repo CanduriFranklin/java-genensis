@@ -4,41 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JAVA GENESIS AI: The Era of Augmented Development</title>
+    
+    <!-- Fuentes personalizadas -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              'cyber-black': '#0a0a0f',
-              'cyber-dark': '#13131f',
-              'neon-purple': '#bf00ff',
-              'neon-cyan': '#00f3ff',
-              'neon-blue': '#2d5af8',
-              'glass': 'rgba(255, 255, 255, 0.05)',
-            }
-          }
-        }
-      }
-    </script>
+
+    <!-- Estilos globales -->
     <style>
       body {
         background-color: #050505;
         color: #e0e0e0;
       }
       .scrollbar-hide::-webkit-scrollbar {
-          display: none;
+        display: none;
       }
       .scrollbar-hide {
-          -ms-overflow-style: none;
+        -ms-overflow-style: none;
       }
       @supports (scrollbar-width: none) {
         .scrollbar-hide {
-            scrollbar-width: none;
+          scrollbar-width: none;
         }
       }
       .glass-panel {
@@ -48,20 +32,22 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
-  }
-}
-</script>
-</head>
+
+    <!-- Import maps para módulos externos -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+        "vite": "https://aistudiocdn.com/vite@^7.2.4",
+        "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+      }
+    }
+    </script>
+  </head>
   <body class="bg-cyber-black text-gray-200 font-sans leading-normal tracking-normal">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
