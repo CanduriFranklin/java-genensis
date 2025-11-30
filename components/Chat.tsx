@@ -53,7 +53,7 @@ export const Chat: React.FC<ChatProps> = ({ isOpen, onClose }) => {
             <MessageSquare size={18} className="text-neon-cyan mr-3" />
             <h2 className="text-lg font-bold text-white">Java Genesis AI</h2>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
+          <button onClick={onClose} aria-label="Close chat" className="text-gray-400 hover:text-white transition-colors">
             <X size={20} />
           </button>
         </header>
@@ -62,7 +62,7 @@ export const Chat: React.FC<ChatProps> = ({ isOpen, onClose }) => {
           {messages.map((msg: ChatMessage, index: number) => (
             <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div className={`max-w-md p-3 rounded-xl ${msg.role === 'user' ? 'bg-neon-purple/20 text-white' : 'bg-gray-800 text-gray-300'}`}>
-                <CodeBlock text={msg.text} />
+                <CodeBlock snippet={{ code: msg.text, language: 'text' }} />
               </div>
             </div>
           ))}
@@ -88,6 +88,7 @@ export const Chat: React.FC<ChatProps> = ({ isOpen, onClose }) => {
             <button
               type="submit"
               disabled={isThinking}
+              aria-label="Send message"
               className="ml-3 p-2 bg-neon-cyan rounded-full text-gray-900 hover:bg-neon-cyan/80 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
             >
               <Send size={18} />

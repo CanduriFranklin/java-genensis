@@ -236,6 +236,7 @@ const App: React.FC = () => {
               onClick={() => goToPage(currentPageIndex - 1)} 
               disabled={currentPageIndex === 0}
               className="disabled:opacity-30 disabled:cursor-not-allowed transition-opacity p-2"
+              title="Previous Page"
             >
               <ChevronLeft size={24} />
             </button>
@@ -244,14 +245,15 @@ const App: React.FC = () => {
               <span className="font-mono text-sm text-gray-400">
                 Page {currentPageIndex + 1} of {totalPages}
               </span>
-            </div>
             <button 
               onClick={() => goToPage(currentPageIndex + 1)} 
               disabled={currentPageIndex === totalPages - 1}
               className="disabled:opacity-30 disabled:cursor-not-allowed transition-opacity p-2"
+              title="Next Page"
             >
               <ChevronRight size={24} />
             </button>
+            </div>
           </div>
         </nav>
 
